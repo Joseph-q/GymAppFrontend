@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    scroll-behavior: smooth;
+
+}
+
+body {
+    background-color: #e6e6e6;
+}
+
+.btn {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0 10px;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+
+.btn:active {
+    background-color: #333;
+    color: #ccc;
+}
+

@@ -1,0 +1,10 @@
+<section class="slider">
+    <div class="slider-inner" [style.transform]="getTransform()">
+        <app-subcription (isPay)="changeSection()" class="component"></app-subcription>
+        <div class="component">
+            <button (click)="prevSlide()" class="prev-button"><i class='bx bx-arrow-back'></i></button>
+            <app-memberships-section></app-memberships-section>
+
+        </div>
+    </div>
+</section>

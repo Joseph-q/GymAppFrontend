@@ -1,0 +1,52 @@
+.HeaderContainer {
+    color: white;
+    background-image: url('../../../../assets/images/pexels-victorfreitas-949131-min_11zon\ \(1\).webp');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: auto;
+    position: relative;
+}
+
+.HeaderContainer::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ContainerHeader{
+    display: flex;
+    position: relative;
+    margin: 0 3rem;
+
+}
+
+
+.ContainerText {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+}
+
+.ContainerText h3 {
+    font-size: 3rem;
+    width: 60%;
+    text-transform: uppercase;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    line-height: 1;
+}
+
+.ContainerText p {
+    font-family: "Kanit", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    letter-spacing: 1.5px;
+    width: 90%;
+}
+
+.LoginRegisterForm{
+    flex: 2;
+}

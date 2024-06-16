@@ -1,0 +1,15 @@
+<div class="container">
+    <h2>Membrecias</h2>
+    <div class="plans">
+        <div class="plan" *ngFor="let plan of plans|async">
+            <h3>{{plan.nickname}} </h3>
+            <p class="price">${{plan.amount/100}} {{plan.currency}}/each {{plan.interval_count}} month</p>
+            <ul>
+                <li>Apoyo en tus entrenamientos</li>
+                <li>Acceso a todas las maquinas</li>
+                <li>Instructores especializados</li>
+            </ul>
+            <button (click)="onClickPlan(plan.id)">Seleccionar</button>
+        </div>
+    </div>
+</div>

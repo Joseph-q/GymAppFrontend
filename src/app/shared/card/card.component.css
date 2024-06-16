@@ -1,0 +1,52 @@
+.card {
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    overflow: hidden; /* Ocultar contenido desbordante */
+    max-width: 300px; /* Ancho máximo de la tarjeta */
+    margin: 20px; /* Margen alrededor de la tarjeta */
+    font-family: Arial, sans-serif; /* Fuente */
+    background-color: #fff; /* Fondo blanco */
+}
+
+.card-image {
+    width: 100%; /* Imagen de ancho completo */
+    height: auto; /* Altura automática para mantener la proporción */
+}
+
+.card-text-container {
+    padding: 15px; /* Relleno alrededor del texto */
+}
+
+.card-title {
+    font-size: 1.5em; /* Tamaño de fuente del título */
+    margin: 0; /* Sin margen superior */
+    color: #333; /* Color del texto del título */
+}
+
+.card-text {
+    font-size: 1em; /* Tamaño de fuente del párrafo */
+    color: #666; /* Color del texto del párrafo */
+    margin-top: 10px; /* Margen superior del párrafo */
+}
+
+.card-button {
+    display: block; /* Botón de bloque */
+    width: 90%; /* Ancho del botón */
+    margin: 20px auto; /* Centrar el botón */
+    padding: 10px; /* Relleno del botón */
+    background-color: #ffcb22;
+    color: black; /* Color del texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados del botón */
+    text-align: center; /* Texto centrado */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 1em; /* Tamaño de fuente del botón */
+    font-weight: 600;
+    cursor: pointer; /* Cursor de puntero al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+.card-button:hover {
+    background-color: #e2b521;
+}

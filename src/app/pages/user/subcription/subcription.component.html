@@ -1,0 +1,39 @@
+<section class="container" *ngIf="subcription as sub">
+    <div class="container-suscription">
+        <h1>Suscripción</h1>
+
+        <section class="info-subcription">
+            <div class="info">
+                <label>Iniciado: </label>
+                <span id="start-date">{{sub.createdAt | date }}</span>
+            </div>
+
+            <div class="info">
+                <label>Tipo de pago: </label>
+                <span>{{sub.payment_method | capitalizeFirst}}</span>
+            </div>
+
+            <div class="info">
+                <label>Periodo actual: </label>
+                <span>desde {{sub.updatedAt | date}} hasta {{sub.expires_at | unixToDate | date}}</span>
+            </div>
+        </section>
+
+
+        <div class="actions">
+            @if (sub.payment_method==="cash") {
+            <button class="btn" (click)="paymentTarget()">Pago con tarjeta</button>
+            }
+
+            @if (sub.payment_method === 'card') {
+            <button class="btn styled-btn" (click)="cancelSubcription()">Cancelar suscripción</button>
+            }
+
+        </div>
+    </div>
+
+    @if(sub.payment_method==="card"){
+    <p class="note">Se te cobrara al termino de tu plan</p>
+    }
+
+</section>

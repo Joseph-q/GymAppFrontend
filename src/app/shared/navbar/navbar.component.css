@@ -1,0 +1,112 @@
+* {
+
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: .7;
+
+}
+
+nav {
+    position: relative;
+    padding: 3rem;
+}
+
+.NavBarInformation {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+}
+
+.NavBarInformation::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to left, rgb(255, 203, 34), transparent);
+    z-index: 1;
+}
+
+
+.BasicList {
+    display: flex;
+    list-style-type: none;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.BasicList a {
+    color: rgb(255, 255, 255);
+}
+
+
+.btn-profile {
+    display: flex;
+    padding: 16px;
+    border: none;
+    position: relative;
+    z-index: 1;
+    background-color: #ffcb22;
+    align-items: center;
+    font-size: medium;
+    font-weight: 700;
+
+}
+
+.btn-profile {
+    cursor: pointer;
+
+}
+
+.btn-profile ::after {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: -12px;
+    bottom: 0;
+    content: '';
+    width: 40px;
+    -ms-transform: skew(-25deg);
+    -webkit-transform: skew(-25deg);
+    transform: skew(-25deg);
+    background: rgb(255, 203, 34);
+}
+
+.btn-profile i {
+    margin-left: 5px;
+    /* Espacio entre el texto y el icono */
+}
+
+
+li {
+    display: block;
+    padding: 14px 16px;
+}
+
+li a {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+.userOptions ul {
+    display: flex;
+
+}
+
+.userOptions ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
+}
+
+
+.userOptions ul li i {
+    font-size: 20px;
+}

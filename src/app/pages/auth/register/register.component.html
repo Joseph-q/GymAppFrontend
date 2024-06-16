@@ -1,0 +1,88 @@
+<div class="container-login-all">
+    <div class="container">
+        <h2>Registrarse</h2>
+
+        <ul class="errorsWarn">
+            <li *ngFor="let message of errorMessage" class="error-toogle-message" (click)="removeErrorMessage(message)">{{message}}</li>
+        </ul>
+
+        <form [formGroup]="userForm" (ngSubmit)="(onRegister())">
+
+            <div class="formGroupTwoLines">
+                <div class="formGroup">
+                    <input type="name" name="username" placeholder="Nombre" formControlName="name" required>
+
+                    <!-- Add a margin and remove it when there is an errors   -->
+                    <div [ngClass]="{'errors':!name?.invalid || !name?.touched}">
+
+                        <p *ngIf="name!.errors?.['required'] && name?.touched" class="error-message">Name is required.
+                        </p>
+
+                    </div>
+
+                </div>
+                <div class="formGroup">
+                    <input type="lastname" name="lastname" placeholder="Apellidos" formControlName="lastname" required>
+                    <!-- Add a margin and remove it when there are errors   -->
+                    <div [ngClass]="{'errors':!lastname?.invalid || !lastname?.touched}">
+
+                        <p *ngIf="lastname!.errors?.['required'] && lastname?.touched" class="error-message">Lastname is
+                            required</p>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="formGroup">
+                <input type="email" name="email" placeholder="Email" formControlName="email">
+
+                <!-- Add a margin and remove it when there is an errors   -->
+                <div [ngClass]="{'errors':!email?.invalid || !email?.touched}">
+
+                    <p *ngIf="email!.errors?.['required'] && email?.touched" class="error-message">Email is required</p>
+
+                    <p *ngIf="email!.errors?.['email'] && email?.touched" class="error-message">Invalid Email</p>
+                </div>
+            </div>
+
+            <div class="formGroup">
+                <input type="password" name="password" placeholder="Password" required formControlName="password1">
+                <!-- Add a margin and remove it when there is an errors   -->
+                <div [ngClass]="{'errors':!password?.invalid || !password?.touched}">
+
+                    <p *ngIf="password!.errors?.['required'] && password?.touched" class="error-message">Password is
+                        required
+                    </p>
+
+                    <p *ngIf="password!.errors?.['minlength'] && password?.touched" class="error-message">Password is
+                        too short
+                    </p>
+
+
+
+                    <p *ngIf="password!.errors?.['pattern'] && password?.touched" class="error-message">Password must
+                        contain Mayus, Minus and numbers
+                    </p>
+
+                </div>
+            </div>
+            <div class="formGroup">
+                <input type="password" name="password2" placeholder="Confirm Password" required
+                    formControlName="password2">
+
+                <!-- Add a margin and remove it when there is an errors   -->
+                <div [ngClass]="{'errors':!userForm.hasError('passwordMismatch') || !password2?.touched}">
+
+                    <p *ngIf="userForm.hasError('passwordMismatch') && password2?.touched" class="error-message">
+                        Password dont
+                        match</p>
+
+                </div>
+
+            </div>
+
+            <input type="submit" value="Registrarse">
+        </form>
+        <a routerLink="/auth/login">Ya tienes una cuenta?</a>
+    </div>
+</div>

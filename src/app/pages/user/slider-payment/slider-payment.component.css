@@ -1,0 +1,32 @@
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.slider-inner {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: 200%;
+    /* 100% for each component */
+}
+
+.component {
+    flex: 0 0 50%;
+    /* Each component takes 50% of the slider-inner width */
+    height: 100%;
+}
+
+.prev-button {
+    position: absolute;
+    top: 10%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size:medium;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}

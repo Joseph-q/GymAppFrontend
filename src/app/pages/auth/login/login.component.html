@@ -1,0 +1,40 @@
+<div class="container">
+    <h2>Iniciar Session</h2>
+    <div *ngIf="errorsLogin" class="error-message">
+        <p>{{errorsLogin}}</p>
+    </div>
+    <div *ngIf="successRegister" class="success-message">
+        {{successRegister}}
+    </div>
+    <form [formGroup]="userData" (ngSubmit)="onSubmit()">
+        <div class="formGroup">
+            <input type="email" placeholder="Email" name="email" formControlName="email" required>
+
+            <div [ngClass]="{'errors':!email?.invalid || !email?.touched}">
+
+                <p *ngIf="email!.errors?.['required'] && email?.touched" class="error-message-input">Email is required
+                </p>
+
+                <p *ngIf="email!.errors?.['email'] && email?.touched" class="error-message-input">Invalid Email</p>
+            </div>
+        </div>
+
+        <div class="formGroup">
+            <input type="password" name="password" placeholder="Password" required formControlName="password">
+
+
+            <div [ngClass]="{'errors':!password?.invalid || !password?.touched}">
+
+                <p *ngIf="password!.errors?.['required'] && password?.touched" class="error-message-input">Password is
+                    required</p>
+
+            </div>
+
+        </div>
+        <button type="submit">Iniciar Session</button>
+    </form>
+    <div class="links">
+        <a routerLink="/auth/register">Aun no tienes cuenta?</a>
+        <a routerLink="/auth/forgot-password">Olvidaste la contraseña?</a>
+    </div>
+</div>

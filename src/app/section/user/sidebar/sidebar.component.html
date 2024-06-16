@@ -1,0 +1,42 @@
+<div class="sidebar" [ngClass]="{'activate':(sideBarChangeSize|async)}">
+  <div class="top">
+    <div class="returnHome">
+      <a routerLink="/"> <i class='bx bx-left-arrow-alt'></i>
+        Home</a>
+    </div>
+    <div class="logo">
+      <i class="bx bxl-codepen"></i>
+      <span>User Dashboard</span>
+    </div>
+    <i class="bx bx-menu" id="toogleBtn" (click)="toggleSidebarSize()"></i>
+  </div>
+
+  <div class="user">
+    @if (user) {
+    <p class="bold">Hola!! {{user.name}}.</p>
+    }
+  </div>
+
+
+  <ul>
+    <li>
+      <a routerLink="/user/qr-code" routerLinkActive="nav-active-link">
+        <i class='bx bx-qr-scan'></i>
+        <span class="nav-item">Qr Code</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/user/account" routerLinkActive="nav-active-link">
+        <i class='bx bx-user-circle'></i>
+        <span class="nav-item">Account</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/user/subcription" routerLinkActive="nav-active-link">
+        <i class='bx bxs-user-badge'></i>
+        <span class="nav-item">Subcription</span>
+      </a>
+    </li>
+  </ul>
+
+</div>

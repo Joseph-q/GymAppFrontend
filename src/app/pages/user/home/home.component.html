@@ -1,0 +1,7 @@
+<app-navbar-profile></app-navbar-profile>
+<app-sidebar></app-sidebar>
+
+
+<main class="main" [ngClass]="{'activate':(sideBarIsActive |async)}  ">
+    <router-outlet></router-outlet>
+</main>

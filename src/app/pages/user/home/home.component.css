@@ -1,0 +1,16 @@
+.main {
+    position: relative;
+    max-height: calc(100vh - 55px);
+    top: 0;
+    left: 80px;
+    transition: all .5s ease;
+    width: calc(100% - 80px);
+    padding: 1rem;
+    overflow-y: scroll  ;
+
+}
+
+.main.activate {
+    left: 250px;
+    width: calc(100% - 250px);
+}

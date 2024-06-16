@@ -1,0 +1,26 @@
+<ng-container *ngIf="subcription | async as sub">
+    <section class="container"  >
+        <div class="container-subscription">
+            <section class="plan-information">
+                <ng-container *ngIf="planInfo | async as plan">
+                    <h3>{{ plan.nickname }}</h3>
+                    <ul class="plan-description">
+                        <li>Acceso a todas las maquinas</li>
+                        <li>Clases grupales incluidas</li>
+                        <li>Entrenador personal disponible</li>
+                        <li>Descuentos en productos</li>
+                    </ul>
+                </ng-container>
+                <br>
+                <p class="expiration-info">Tiempo de expiracion: <b>{{ sub.expires_at | unixToDays }}</b> dias</p>
+            </section>
+            <section class="Qr-Container">
+                <qrcode (qrCodeURL)="onChangeURL($event)" [qrdata]="QrString" [width]="256" [errorCorrectionLevel]="'M'"
+                    [allowEmptyString]="true"></qrcode>
+                <a [href]="qrCodeDownloadLink" download="qrcode">Download</a>
+            </section>
+        </div>
+        <p class="qr-note">Este Qr no puede ser compartido</p>
+    </section>
+
+</ng-container>

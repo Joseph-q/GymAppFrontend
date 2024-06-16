@@ -1,0 +1,29 @@
+<section class="container-account">
+    <h1 class="mt-5">Cuenta</h1>
+    <div class="account">
+        <section class="user-info mt-4" *ngIf="user | async as user">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p class="card-text"><b>Email:</b> {{user.email}}</p>
+                            <p class="card-text"><b>Nombre:</b> {{user.name}}</p>
+                            <p class="card-text"><b>Lastname:</b> {{user.lastname}}</p>
+                            <p class="card-text"><b>Password:</b> *********</p>
+                        </div>
+                        <div class="col-sm-6 text-left">
+                            <p class="card-text"><b>Tarjeta:</b> Crédito</p>
+                            <p class="card-text"><b>Número de tarjeta:</b> **** 4444</p>
+                        </div>
+                    </div>
+                    <div class="actions mt-3">
+                        <button class="btn btn-primary mr-2">Cambiar contraseña</button>
+                        <button class="btn btn-primary mr-2">Cambiar datos de tarjeta</button>
+                        <button class="btn btn-danger">Cerrar sesión</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+</section>

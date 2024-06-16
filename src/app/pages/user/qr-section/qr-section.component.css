@@ -1,0 +1,71 @@
+.container {
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+.container-subscription {
+    display: flex;
+    flex-direction: row;
+    padding: 0 100px;
+
+}
+
+.plan-information {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 3;
+}
+
+.Qr-Container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.plan-information h3 {
+
+    font-size: 3em;
+    font-weight: 700;
+}
+
+.expiration-info {
+    font-size: 1.5em;
+
+}
+
+.plan-description {
+    list-style-type: none;
+    padding: 0;
+}
+
+.plan-description li {
+    position: relative;
+    font-size: 1.5em;
+    padding-left: 20px;
+    /* Espacio para el pseudo-elemento */
+}
+
+.plan-description li::before {
+    content: '•';
+    /* Punto de la lista */
+    color: yellow;
+    /* Color del punto */
+    position: absolute;
+    top: -20%;
+    left: 0;
+    font-size: 1.2em;
+    /* Tamaño del punto */
+}
+
+.qr-note {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}

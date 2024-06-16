@@ -1,0 +1,54 @@
+label {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+span {
+    font-size: 1.5rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-top: 4rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+
+.container-suscription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    justify-content: space-between;
+    padding: 0px 50px 0px 50px;
+
+}
+
+.info-subcription {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+.actions{
+    margin-top: 10px;
+}
+
+.note {
+    margin-top: 10px;
+    text-align: center;
+    font-style: italic;
+    color: #777;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}

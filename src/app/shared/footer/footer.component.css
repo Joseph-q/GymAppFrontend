@@ -1,0 +1,34 @@
+footer {
+    margin-top: 30px;
+    background-color: #000000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #ffcb22; /* Cambia este color por el que desees para el hover */
+}

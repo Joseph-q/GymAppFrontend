@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.container h2 {
+    position: relative;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.container h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: #ffcb22;
+}
+
+
+.aboutUsContent {
+    display: flex;
+}
+
+.about {
+    flex: 1;
+    max-width: 50%;
+    padding: 20px;
+}
+
+
+.about p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.image {
+    flex: 1;
+    max-width: 50%;
+    padding: 20px;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+}

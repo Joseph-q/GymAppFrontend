@@ -1,0 +1,99 @@
+.container-login-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+
+}
+
+.container-login-all a {
+    color: rgb(14, 12, 12);
+}
+
+.container {
+    background-color: rgb(255, 203, 34);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+    font-family: "Kanit", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+form {
+    margin-top: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.formGroupTwoLines {
+    display: flex;
+}
+
+
+input[type="submit"] {
+    margin-top: 5px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.error-message {
+    font-size: 12px;
+    margin-left: 4px;
+    color: #c40303;
+}
+
+.errors {
+    margin: 5px;
+}
+
+.errorsWarn {
+    list-style: none;
+    overflow: hidden;
+    display: flex;
+}
+
+
+.error-toogle-message {
+    font-size: 12px;
+    margin-left: 4px;
+    padding: 5px;
+    background-color: #ffcccc;
+    border-radius: 5px;
+    color: #c40303;
+    border: 2px solid #a80000;
+
+}
+
+.error-toogle-message:hover{
+    background-color: rgb(255, 157, 157);
+    cursor: pointer;
+
+}
+
+.errorsWarn li:nth-child(n+4) {
+    opacity: 0;
+    position: absolute;
+}
+
+.errorsWarn:hover li:nth-child(n+4) {
+    height: 0;
+    /* Hacer que el elemento tenga altura cero */
+    padding: 0;
+    /* Eliminar el espacio ocupado por el elemento */
+    margin: 0;
+    /* Eliminar el margen */
+    overflow: hidden;
+    /* Ocultar cualquier contenido que exceda el límite de altura */
+}
