@@ -1,79 +1,80 @@
-# 🏋️‍♂️ Aplicación de Gimnasio
+# Gym Application
 
-¡Bienvenido a la Aplicación de Gimnasio! Esta plataforma integral está diseñada para la gestión eficiente de usuarios en un gimnasio, facilitando el registro, la autenticación y la gestión de suscripciones.
+Welcome to the Gym Application! This comprehensive platform is designed for efficient user management in a gym, facilitating registration, authentication, and subscription management.
 
-## 🚀 Características
+## Features
 
-- **Autenticación de usuarios**: Proceso seguro de inicio de sesión y registro de nuevos usuarios.
-- **Suscripciones**: Compra y gestión de suscripciones de gimnasio.
-- **Recordatorios y notificaciones**: Recepción de recordatorios sobre sesiones, autenticacion y notificaciones importantes.
+- **User Authentication**: Secure login and registration process for new users.
+- **Subscriptions**: Purchase and management of gym subscriptions.
+- **Reminders and Notifications**: Receive reminders about sessions, authentication, and important notifications.
 
 ---
 
-## ⚙️ ¿Cómo funciona por detrás?
+## ⚙️ How does it work behind the scenes?
 
-La aplicación está estructurada en dos partes principales: el frontend y el backend, que interactúan de manera fluida para ofrecer una experiencia de usuario óptima.
+The application is structured into two main parts: the frontend and the backend, which interact seamlessly to provide an optimal user experience.
+
 ### Frontend
 
-El frontend está desarrollado con tecnologías modernas que garantizan una interfaz de usuario intuitiva y receptiva. Este se comunica con el backend a través de una API REST, enviando y recibiendo datos en formato JSON.
+The frontend is developed with modern technologies that ensure an intuitive and responsive user interface. It communicates with the backend through a REST API, sending and receiving data in JSON format.
 
-#### Página Principal
-![Página Principal](/src/assets/GymApp/PrincipalPage.png)
+#### Main Page
+![Main Page](/src/assets/GymApp/PrincipalPage.png)
 
-#### Inicio de Sesión
-Cuando el usuario inicia sesión y las credenciales son correctas, se envía un token de sesión con una versión específica. Si la contraseña es incorrecta, se devuelve un código de estado 401 indicando "Email o contraseña incorrecta".
-![Inicio de Sesión](/src/assets/GymApp/AuthLogin.png)
+#### Login
+When the user logs in and the credentials are correct, a session token is sent with a specific version. If the password is incorrect, a 401 status code is returned indicating "Email or password incorrect".
+![Login](/src/assets/GymApp/AuthLogin.png)
 
-#### Registro
-Al registrarse, se envía una solicitud al backend para la creación de un nuevo usuario. Si el correo electrónico ya está registrado, se devuelve un código de estado 400 con el mensaje "Email ya registrado".
-![Registro](/src/assets/GymApp/AuthRegister.png)
+#### Registration
+Upon registration, a request is sent to the backend to create a new user. If the email is already registered, a 400 status code is returned with the message "Email already registered".
+![Registration](/src/assets/GymApp/AuthRegister.png)
 
-#### Olvidó Contraseña
-Si el usuario olvida su contraseña, se envía un correo electrónico con un token mágico para recuperarla.
-![Olvidó Contraseña](/src/assets/GymApp/AuthForgotPassword.png)
+#### Forgot Password
+If the user forgets their password, an email is sent with a magic token to recover it.
+![Forgot Password](/src/assets/GymApp/AuthForgotPassword.png)
 
-#### Recuperación de Contraseña
-La recuperación de la contraseña se realiza a través de un enlace único. El primer parámetro del enlace es el ID del usuario y el segundo es el token mágico, que tiene una validez de solo 10 minutos. Ejemplo de enlace:
+#### Password Recovery
+Password recovery is done through a unique link. The first parameter of the link is the user ID and the second is the magic token, which is only valid for 10 minutes. Example link:
 `http://localhost:4200/auth/recover-password/2a845411-75c9-4887-a95e-ac3bd0307553/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9eyJpZCI6IjJhODQ1NDExLTc1YzktNDg4Ny1hOTVlLWFjM2JkMDMwNzU1MyIsImVtYWlsIjoiYWpvc2VwaHNhbnpqQGdtYWlsLmNvbSIsImlhdCI6MTcxODQ5OTQ0NSwiZXhwIjoxNzE4NTAwMDQ1fQ.Z8ay0kL6RhoQqjUGwt-3Mr_jZ4bCZr1LbY06HA76lg0`
-![Recuperación de Contraseña](/src/assets/GymApp/AuthRecoverPassword.png)
+![Password Recovery](/src/assets/GymApp/AuthRecoverPassword.png)
 
-#### Token de Usuario
-Se utiliza un JSON Web Token (JWT) que contiene la información básica del usuario y el tipo de suscripción que tiene.
-![Token de Usuario](/src/assets/GymApp/Qr-code.png)
+#### User Token
+A JSON Web Token (JWT) is used, containing basic user information and their subscription type.
+![User Token](/src/assets/GymApp/Qr-code.png)
 
 
 ### Backend
 
-El backend está desarrollado con NestJS, un framework robusto para aplicaciones Node.js, y se encarga de gestionar la lógica de negocio y la interacción con la base de datos.
+The backend is developed with NestJS, a robust framework for Node.js applications, and is responsible for handling business logic and database interactions.
 
-#### Funcionalidades del Backend:
+#### Backend Features:
 
-- **Crear suscripciones**: Maneja la lógica para la creación y renovación de suscripciones de gimnasio.
-- **Crear usuarios**: Gestiona el registro de nuevos usuarios, asegurando la validación y almacenamiento seguro de datos.
-- **Autenticar usuarios**: Implementa mecanismos de autenticación utilizando JWT para asegurar sesiones seguras.
-- **Aceptar pagos con Stripe**: Integra la pasarela de pagos Stripe para gestionar transacciones de forma segura. Más información sobre Stripe [aquí](https://docs.stripe.com/api).
-- **Asignar roles a usuarios**: Define y asigna roles específicos a los usuarios, como administrador, entrenador y cliente.
-- **Gestionar permisos para los roles**: Utiliza CASL (CaslAbility) para controlar los permisos y accesos a los recursos según los roles asignados. Puedes encontrar más información sobre CASL en [su documentación oficial](https://casl.js.org/v5/en/).
+- **Create Subscriptions**: Handles the logic for creating and renewing gym subscriptions.
+- **Create Users**: Manages the registration of new users, ensuring data validation and secure storage.
+- **Authenticate Users**: Implements authentication mechanisms using JWT for secure sessions.
+- **Accept Payments with Stripe**: Integrates the Stripe payment gateway to manage transactions securely. More information about Stripe [here](https://docs.stripe.com/api).
+- **Assign Roles to Users**: Defines and assigns specific roles to users, such as administrator, trainer, and client.
+- **Manage Role Permissions**: Uses CASL (CaslAbility) to control permissions and access to resources according to assigned roles. You can find more information about CASL in [their official documentation](https://casl.js.org/v5/en/).
 
-#### Tecnologías y Herramientas:
+#### Technologies and Tools:
 
-- **NestJS**: Framework para construir aplicaciones escalables de Node.js.
-- **Mysql**: Base de datos SQL utilizada para almacenar la información de los usuarios, suscripciones, roles, permisos.
-- **JWT**: Utilizado para la autenticación de usuarios y la gestión de sesiones.
-- **CASL**: Biblioteca para la gestión de permisos y roles.
-- **Stripe**: Pasarela de pago para gestionar transacciones financieras.
+- **NestJS**: Framework for building scalable Node.js applications.
+- **MySQL**: SQL database used to store user information, subscriptions, roles, permissions.
+- **JWT**: Used for user authentication and session management.
+- **CASL**: Library for managing permissions and roles.
+- **Stripe**: Payment gateway to handle financial transactions.
 
 
-## 🛡️ Seguridad
+## 🛡️ Security
 
-- **Contraseñas seguras**: Las contraseñas se almacenan de manera segura utilizando bcrypt.
-- **Protección de datos**: Uso de JWT para autenticación y sesiones seguras.
-- **Pagos seguros**: Integración con Stripe para manejar pagos de manera segura y eficiente.
+- **Secure Passwords**: Passwords are stored securely using bcrypt.
+- **Data Protection**: Use of JWT for authentication and secure sessions.
+- **Secure Payments**: Integration with Stripe to handle payments securely and efficiently.
 
-## 📄 Licencia
+## 📄 License
 
-Este proyecto está bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-## 📧 Contacto
+## 📧 Contact
 
-Si tienes preguntas o necesitas más información, puedes contactarnos en [ajosephsanzj@gmail.com].
+If you have questions or need more information, you can contact us at [ajosephsanzj@gmail.com].
